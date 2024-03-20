@@ -14,7 +14,7 @@
         <div class="col-xl-4 col-sm-12 col-md-9">
             <div class="feedback-form rounded py-4">
                 <div class="container">
-                    <h6 class="fs-5 text-center">Заповніть форму та отримайте професійну консультацію</h6>
+                    <h6 class="custom-text-22 text-center">Заповніть форму та отримайте професійну консультацію</h6>
                     <form action="" id="form" class="container">
                         <div class="mb-2 form-item">
                             <label for="name" class="col-form-label">Ваше ім'я</label>

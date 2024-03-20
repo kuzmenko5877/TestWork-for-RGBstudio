@@ -3,6 +3,7 @@ function enqueue_bootstrap_styles()
 {
     wp_enqueue_style('bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css');
     wp_enqueue_style('custom-style', get_template_directory_uri() . '/assets/css/style.css', array(), '1.0', 'all');
+    wp_enqueue_style('custom-fonts', 'https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap');
 }
 add_action('wp_enqueue_scripts', 'enqueue_bootstrap_styles');
 
