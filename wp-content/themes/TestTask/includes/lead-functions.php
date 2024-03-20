@@ -56,11 +56,17 @@ function save_lead_meta($post_id) {
         return;
     }
 
-    $lead_email = get_option('admin_email');
-    $lead_subject = 'Новый лид на вашем сайте';
-    $lead_message = 'На вашем сайте появился новый лид.';
+    $email_sent = get_post_meta($post_id, 'email_sent', true);
 
-    wp_mail($lead_email, $lead_subject, $lead_message);
+    if (!$email_sent) {
+        $lead_email = get_option('admin_email');
+        $lead_subject = 'Новый лид на вашем сайте';
+        $lead_message = 'На вашем сайте появился новый лид.';
+
+        wp_mail($lead_email, $lead_subject, $lead_message);
+
+        update_post_meta($post_id, 'email_sent', true);
+    }
 
     if (isset($_POST['lead_phone'])) {
         update_post_meta($post_id, 'phone', sanitize_text_field($_POST['lead_phone']));
